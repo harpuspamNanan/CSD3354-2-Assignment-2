@@ -9,7 +9,7 @@ namespace DelegatesAndEvents
     {
         public static void Method1(string xyz)
         {
-            Console.WriteLine(xyz + " Method1");
+            Console.WriteLine(xyz + " Method1"); 
         }
 
         public static void Method2(string xyz)
