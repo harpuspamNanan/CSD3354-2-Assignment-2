@@ -8,14 +8,8 @@ namespace DelegatesEvents
 {
     public class DelegateExercises
     {
-        public static void Main(String[] args)
-        {
-            DelegateExercises de = new DelegateExercises();
-            de.Method2();
-        }
-
-        public delegate void MyDelegate();
-        public void Method1()
+        public delegate void MyDelegate(int num);
+        void Method1(int num)
         {
             Console.WriteLine("Method1");
             Console.ReadLine();
@@ -23,12 +17,17 @@ namespace DelegatesEvents
         public void Method2()
         {
             MyDelegate myDelegate = new MyDelegate(Method1);
-            myDelegate();
+            myDelegate(50);
         }
+    }
 
-       
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            DelegateExercises de = new DelegateExercises();
+            de.Method2();
+        }
     }
 }
-
-
-
