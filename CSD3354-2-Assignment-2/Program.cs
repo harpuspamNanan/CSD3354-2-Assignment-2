@@ -25,6 +25,7 @@ namespace DelegatesAndEvents
         {
             Mydelegate myDelegate = new Mydelegate(Method1);
             myDelegate();
+            Console.WriteLine(myDelegate.ToString());
         }
     }
 }
