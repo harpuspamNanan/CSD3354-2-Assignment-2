@@ -3,18 +3,37 @@
 namespace DelegatesAndEvents
 {
 
-    public class DelegateExercises
-    {
+    delegate void ExampleDelegate(string xyz);
 
-        void Method1()
+    class Program
+    {
+        public static void Method1(string xyz)
         {
-            Console.WriteLine("method1");
+            Console.WriteLine(xyz + " Method1");
         }
 
-        public void Method3()
+        public static void Method2(string xyz)
         {
-           
-            Console.WriteLine(myDelegate.ToString());
+            Console.WriteLine(xyz + " Method2");
+        }
+
+        public static void Main()
+        {
+            ExampleDelegate ex1Delegate, ex2Delegate, ex3Delegate, myDelegate;
+
+            ex1Delegate = new ExampleDelegate(Method1);
+            ex2Delegate = new ExampleDelegate(Method2);
+            ex3Delegate = ex1Delegate + ex2Delegate;
+            myDelegate = ex1Delegate - ex2Delegate;
+            ex1Delegate("AAA");
+            ex2Delegate("BBB");
+            ex3Delegate("CCC");
+            myDelegate("DDD");
+            myDelegate = ex3Delegate - ex1Delegate;
+            myDelegate("EEE");
+            myDelegate = ex3Delegate - ex2Delegate;
+            myDelegate("FFF");
+            Console.ReadLine();
         }
     }
 }
