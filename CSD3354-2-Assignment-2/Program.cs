@@ -18,18 +18,21 @@ namespace DelegatesAndEvents
 
         public int Method1(int intMethod1)
         {
-            return intMethod1 * 2;
+            return intMethod1 * 4;
         }
 
         public int Method2(int intMethod1)
         {
-            return intMethod1 * 10;
+            return intMethod1 * 20;
         }
 
         public void Method4(MyDelegate myDelegate)
         {
-            int result = myDelegate(10);
-            Console.WriteLine(result);
+            for (int i = 1; i <= 5; i++)
+            {
+                Console.WriteLine(myDelegate(i) + " ");
+            }
+            
         }
 
         public void Method3()
